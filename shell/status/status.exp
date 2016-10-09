@@ -1,5 +1,5 @@
 #!/usr/bin/expect
-log_file status.log
+log_file log
 
 log_user 1
 set timeout 120

@@ -1,0 +1,27 @@
+#!/usr/bin/expect
+log_file log
+
+log_user 1
+set timeout 120
+
+spawn rhc ssh php
+
+expect "\\>"; send "pwd\r"
+expect "\\>"; send "whoami\r"
+expect "\\>"; send "uname -a\r"
+expect "\\>"; send "alias ls='ls --color=auto'\r"
+expect "\\>"; send "/sbin/ifconfig\r"
+expect "\\>"; send "fdisk -l\r"
+expect "\\>"; send "df -h\r"
+expect "\\>"; send "mount\r"
+expect "\\>"; send "cat /proc/cpuinfo\r"
+expect "\\>"; send "free\r"
+expect "\\>"; send "ps aux\r"
+expect "\\>"; send "cd ~/app-deployments/test/\r"
+expect "\\>"; send "tar zcvf src.tar.gz ./src/*\r"
+expect "\\>"; send "exit\r"
+expect "\\>"; send "\r"
+
+log_user 0
+expect eof
+exit

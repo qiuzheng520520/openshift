@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+log_file download.log
+
+log_user 1
+set timeout 120
+
+spawn rhc scp php download ./Download/ app-deployments/test/src.tar.gz
+
+log_user 0
+expect eof
+exit

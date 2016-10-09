@@ -1,0 +1,46 @@
+HTTP/1.1 200 OK
+Server: jyws
+Date: Wed, 09 Sep 2015 06:35:02 GMT
+Content-Type: text/html; charset=UTF-8
+Transfer-Encoding: chunked
+Connection: close
+Set-Cookie: PHPSESSID=f4f79d42cff6a8a182bedcfbf41fba57; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+P3P: CP="CAO PSA OUR"
+Set-Cookie: SESSION_HASH=2598b916303b98488a94d3dcc4fe6bdd57d9b64b; expires=Wed, 09-Sep-2015 16:35:02 GMT; path=/; domain=59.151.18.26
+
+64e
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>世纪佳缘交友网:查看用户详细资料失败</title>
+<link href="http://images1.jyimg.com/w4/common/c/base.css" rel="stylesheet" type="text/css" />
+<link href="http://images1.jyimg.com/w4/info/c/new_css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://images1.jyimg.com/w4/jsLib/JY.login.js"></script>
+</head>
+<body>
+<script type="text/javascript" src="http://images1.jyimg.com/js/header/head_pink.js"></script>
+<script type="text/javascript">
+jy_head_function.set_head_nav_link(1);
+jy_head_function.set_head_nav_user(1);
+</script>
+	<div class="tip-mb">
+    	<dl>
+        	<dt><img src="http://images.jiayuan.com/w4/info/i/icon.gif" width="41" height="41" /></dt>
+            <dd class='last'>查看用户详细资料失败</dd>
+            <dd>您查找的用户ID有误或不存在，请尝试其他方式搜索。</dd>
+        </dl>
+        <p><span style='color:#333333'>您可以：</span><br />·&nbsp;&nbsp;<a href="javascript:history.back()">返回上一页</a>，或请确保是从网站页面点击而来<br />·&nbsp;&nbsp;立即<a href="http://login.jiayuan.com">登录</a>或<a href="http://reg.jiayuan.com">注册</a>世纪佳缘</p>
+
+        </p>
+       
+    </div>
+<script type='text/javascript' src='http://images1.jyimg.com/js/footer/w4-simple.js'></script>
+</body>
+</html>
+
+0
+

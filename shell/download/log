@@ -1,0 +1,1585 @@
+spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+pwd
+    ***  This gear has been temporarily unidled. To keep it active, access
+    ***  your app @ http://php-qiuzheng.rhcloud.com/
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.4G  4.7G  42% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   15138952     158656    1023924      36268    2573172
+-/+ buffers/cache:   12529512    2768096 
+Swap:     52428792   25825856   26602936 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     215941  0.0  0.0 108796  2768 ?        S    11:36   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     216954  0.4  0.0 106636  2248 pts/0    Ss   11:36   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     217279  0.0  0.0   9500   856 ?        S    11:36   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     217284  0.0  0.0   9240  1268 ?        S    11:36   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     217285  0.0  0.0 120212  2360 ?        Sl   11:36   0:00 /usr/bin/logshifter -tag mysql
+4100     217423  0.5  0.2 379268 40816 ?        Sl   11:36   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     218613  0.6  0.1 428984 17264 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     218614  0.0  0.0 195864  2372 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     218624  0.0  0.0   4072   496 ?        S    11:37   0:00 tee
+4100     218632  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     218634  0.0  0.0 428984  7056 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     221226  6.0  0.1 426652 17148 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     221227  0.0  0.0 261400  2388 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag php
+4100     221239  0.0  0.0   4072   500 ?        S    11:37   0:00 tee
+4100     221240  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     221241  0.0  0.0 426652  7020 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     221244  0.0  0.0 108140  1088 pts/0    R+   11:37   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.4G  4.7G  42% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   14486884     810724     907856      36800    2488848
+-/+ buffers/cache:   11961236    3336372 
+Swap:     52428792   25772756   26656036 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     217279  0.0  0.0   9500   856 ?        S    11:36   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     217284  0.0  0.0   9240  1268 ?        S    11:36   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     217285  0.0  0.0 120340  2368 ?        Sl   11:36   0:00 /usr/bin/logshifter -tag mysql
+4100     217423  0.0  0.2 379268 40816 ?        Sl   11:36   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     218613  0.0  0.1 428984 17264 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     218614  0.0  0.0 195992  2384 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     218624  0.0  0.0   4072   496 ?        S    11:37   0:00 tee
+4100     218632  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     218634  0.0  0.0 428984  7056 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     221226  0.0  0.1 426652 17148 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     221227  0.0  0.0 261528  2392 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag php
+4100     221239  0.0  0.0   4072   500 ?        S    11:37   0:00 tee
+4100     221240  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     221241  0.0  0.0 426652  7020 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     243728  0.0  0.0 108796  2768 ?        S    11:48   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     243923  1.0  0.0 106636  2248 pts/0    Ss   11:48   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     244581  0.0  0.0 108136  1084 pts/0    R+   11:48   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cd ~/app-deployments/
+[php-qiuzheng.rhcloud.com app-deployments]\> tar zcvf test/* test.tar.gz
+tar (child): test/download: Cannot open: Is a directory
+tar (child): Error is not recoverable: exiting now
+test/etc/
+test/etc/bashrc
+test/etc/vimrc
+test/src/
+test/src/http/
+test/src/http/getip/
+test/src/http/getip/Makefile
+test/src/http/getip/connect
+test/src/http/getip/connect.c
+test/src/http/getip/html.txt
+test/src/http/getip/result.txt
+test/src/http/getip/var.h
+test/src/http/http/
+test/src/http/http/Makefile
+test/src/http/http/bin.sh
+test/src/http/http/connect
+test/src/http/http/connect.c
+test/src/http/http/define.h
+test/src/http/http/dns.h
+test/src/http/http/result-copy.txt
+[php-qiuzheng.rhcloud.com app-deployments]\> exit
+exit
+Connection to php-qiuzheng.rhcloud.com closed.
+send: spawn id exp7 not open
+    while executing
+"send "\r""
+    (file "./download.exp" line 23)
+spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.4G  4.7G  42% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   14669740     627868     907852      36896    2660404
+-/+ buffers/cache:   11972440    3325168 
+Swap:     52428792   25752516   26676276 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     217279  0.0  0.0   9500   856 ?        S    11:36   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     217284  0.0  0.0   9240  1268 ?        S    11:36   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     217285  0.0  0.0 120340  2368 ?        Sl   11:36   0:00 /usr/bin/logshifter -tag mysql
+4100     217423  0.0  0.2 379268 40816 ?        Sl   11:36   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     218613  0.0  0.1 428984 17264 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     218614  0.0  0.0 195992  2384 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     218624  0.0  0.0   4072   496 ?        S    11:37   0:00 tee
+4100     218632  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     218634  0.0  0.0 428984  7056 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     221226  0.0  0.1 426652 17148 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     221227  0.0  0.0 261528  2392 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag php
+4100     221239  0.0  0.0   4072   500 ?        S    11:37   0:00 tee
+4100     221240  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     221241  0.0  0.0 426652  7020 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     250871  0.0  0.0 108796  2764 ?        S    11:51   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     251170  1.2  0.0 106636  2244 pts/0    Ss   11:51   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     251478  0.0  0.0 108136  1084 pts/0    R+   11:51   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cd ~/app-deployments/
+[php-qiuzheng.rhcloud.com app-deployments]\> tar zcvf test/* test.tar.gz
+tar (child): test/download: Cannot open: Is a directory
+tar (child): Error is not recoverable: exiting now
+test/etc/
+test/etc/bashrc
+test/etc/vimrc
+test/src/
+test/src/http/
+test/src/http/getip/
+test/src/http/getip/Makefile
+test/src/http/getip/connect
+test/src/http/getip/connect.c
+test/src/http/getip/html.txt
+test/src/http/getip/result.txt
+test/src/http/getip/var.h
+test/src/http/http/
+test/src/http/http/Makefile
+test/src/http/http/bin.sh
+test/src/http/http/connect
+test/src/http/http/connect.c
+test/src/http/http/define.h
+test/src/http/http/dns.h
+test/src/http/http/result-copy.txt
+[php-qiuzheng.rhcloud.com app-deployments]\> exit
+exit
+Connection to php-qiuzheng.rhcloud.com closed.
+send: spawn id exp7 not open
+    while executing
+"send "\r""
+    (file "./download.exp" line 23)
+spawn rhc ssh php
+spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.4G  4.7G  42% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   14845540     452068     907884      36996    2701352
+-/+ buffers/cache:   12107192    3190416 
+Swap:     52428792   25738992   26689800 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     217279  0.0  0.0   9500   856 ?        S    11:36   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     217284  0.0  0.0   9240  1268 ?        S    11:36   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     217285  0.0  0.0 120340  2368 ?        Sl   11:36   0:00 /usr/bin/logshifter -tag mysql
+4100     217423  0.0  0.2 379268 40816 ?        Sl   11:36   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     218613  0.0  0.1 428984 17264 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     218614  0.0  0.0 195992  2384 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     218624  0.0  0.0   4072   496 ?        S    11:37   0:00 tee
+4100     218632  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     218634  0.0  0.0 428984  7056 ?        S    11:37   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     221226  0.0  0.1 426652 17148 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     221227  0.0  0.0 261528  2392 ?        Sl   11:37   0:00 /usr/bin/logshifter -tag php
+4100     221239  0.0  0.0   4072   500 ?        S    11:37   0:00 tee
+4100     221240  0.0  0.0   4072   488 ?        S    11:37   0:00 tee
+4100     221241  0.0  0.0 426652  7020 ?        S    11:37   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     262443  0.0  0.0 108796  2768 ?        S    11:57   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     262450  1.1  0.0 106636  2248 pts/0    Ss   11:57   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     263654  0.0  0.0 108132  1080 pts/0    R+   11:58   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cd ~/app-deployments/
+[php-qiuzheng.rhcloud.com app-deployments]\> tar zcvf test/* test.tar.gz
+tar (child): test/download: Cannot open: Is a directory
+tar (child): Error is not recoverable: exiting now
+test/etc/
+test/etc/bashrc
+test/etc/vimrc
+test/src/
+test/src/http/
+test/src/http/getip/
+test/src/http/getip/Makefile
+test/src/http/getip/connect
+test/src/http/getip/connect.c
+test/src/http/getip/html.txt
+test/src/http/getip/result.txt
+test/src/http/getip/var.h
+test/src/http/http/
+test/src/http/http/Makefile
+test/src/http/http/bin.sh
+test/src/http/http/connect
+test/src/http/http/connect.c
+test/src/http/http/define.h
+test/src/http/http/dns.h
+test/src/http/http/result-copy.txt
+[php-qiuzheng.rhcloud.com app-deployments]\> exit
+exit
+Connection to php-qiuzheng.rhcloud.com closed.
+send: spawn id exp7 not open
+    while executing
+"send "\r""
+    (file "./tar.exp" line 23)
+spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.2G  4.9G  40% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   15149452     148156     922688      37472    4027720
+-/+ buffers/cache:   11084260    4213348 
+Swap:     52428792   25292608   27136184 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     333950  0.0  0.0   9500   856 ?        S    10:42   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     333955  0.0  0.0   9240  1264 ?        S    10:42   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     333956  0.0  0.0 185748  2368 ?        Sl   10:42   0:00 /usr/bin/logshifter -tag mysql
+4100     334098  0.0  0.2 379268 40824 ?        Sl   10:42   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     334811  0.0  0.1 428984 17264 ?        S    10:43   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     334812  0.0  0.0 261528  2392 ?        Sl   10:43   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     334833  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     334840  0.0  0.0   4072   488 ?        S    10:43   0:00 tee
+4100     334845  0.0  0.0 428984  7056 ?        S    10:43   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     337859  0.0  0.1 426652 17152 ?        S    10:43   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     337860  0.0  0.0 195992  2396 ?        Sl   10:43   0:00 /usr/bin/logshifter -tag php
+4100     337870  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     337872  0.0  0.0   4072   488 ?        S    10:43   0:00 tee
+4100     337873  0.0  0.0 426652  7024 ?        S    10:43   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     369596  0.0  0.0 109140  3008 ?        S    10:58   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     369600  0.0  0.0 106760  2304 pts/0    Ss+  10:58   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     386638  0.0  0.0 108796  2764 ?        S    11:05   0:00 sshd: 543dd9894382ec666100002d@pts/1
+4100     386665  0.9  0.0 106636  2244 pts/1    Ss   11:05   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     387111  0.0  0.0 108136  1084 pts/1    R+   11:05   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cd ~/app-deployments/test/
+[php-qiuzheng.rhcloud.com test]\> tar zcvf test/src/* src.tar.gz
+tar: src.tar.gz: Cannot stattar (child): : No such file or directorytest/src/*: Cannot open
+: No such file or directory
+tar (child): Error is not recoverable: exiting now
+tar: Child returned status 2
+tar: Error is not recoverable: exiting now
+[php-qiuzheng.rhcloud.com test]\> exit
+exit
+Connection to php-qiuzheng.rhcloud.com closed.
+send: spawn id exp7 not open
+    while executing
+"send "\r""
+    (file "./tar.exp" line 23)
+spawn rhc ssh php
+pwd
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+pwd
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.2G  4.9G  40% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   15126088     171520     923788      37960    4100784
+-/+ buffers/cache:   10987344    4310264 
+Swap:     52428792   25268216   27160576 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     333950  0.0  0.0   9500   856 ?        S    10:42   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     333955  0.0  0.0   9240  1264 ?        S    10:42   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     333956  0.0  0.0 185748  2368 ?        Sl   10:42   0:00 /usr/bin/logshifter -tag mysql
+4100     334098  0.0  0.2 510860 42876 ?        Sl   10:42   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     334811  0.0  0.1 428984 17264 ?        S    10:43   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     334812  0.0  0.0 261528  2392 ?        Sl   10:43   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     334833  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     334840  0.0  0.0   4072   488 ?        S    10:43   0:00 tee
+4100     334845  0.0  0.0 428984  7056 ?        S    10:43   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     337859  0.0  0.1 426652 17152 ?        S    10:43   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     337860  0.0  0.0 195992  2396 ?        Sl   10:43   0:00 /usr/bin/logshifter -tag php
+4100     337870  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     337872  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     369596  0.0  0.0 109140  3008 ?        S    10:58   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     369600  0.0  0.0 106760  2304 pts/0    Ss+  10:58   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     397253  1.3  0.3 457572 50204 ?        S    11:10   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     397286  0.2  0.1 432464 27836 ?        S    11:10   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     398383  0.0  0.0 108796  2768 ?        R    11:10   0:00 sshd: 543dd9894382ec666100002d@pts/1
+4100     398420  2.7  0.0 106636  2248 pts/1    Ss   11:10   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     398732  0.0  0.0 108136  1084 pts/1    R+   11:11   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cd ~/app-deployments/test/
+[php-qiuzheng.rhcloud.com test]\> tar zcvf src.tar.gz test/src/*
+tar: test/src/*: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+[php-qiuzheng.rhcloud.com test]\> exit
+exit
+Connection to php-qiuzheng.rhcloud.com closed.spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+
+    *********************************************************************
+
+    You are accessing a service that is for use only by authorized users.
+    If you do not have authorization, discontinue use at once.
+    Any use of the services is subject to the applicable terms of the
+    agreement which can be found at:
+    https://www.openshift.com/legal
+
+    *********************************************************************
+
+    Welcome to OpenShift shell
+
+    This shell will assist you in managing OpenShift applications.
+
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+    Shell access is quite powerful and it is possible for you to
+    accidentally damage your application.  Proceed with care!
+    If worse comes to worst, destroy your application with "rhc app delete"
+    and recreate it
+    !!! IMPORTANT !!! IMPORTANT !!! IMPORTANT !!!
+
+    Type "help" for more info.
+
+
+[?1034h[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> pwd
+/var/lib/openshift/543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> whoami
+543dd9894382ec666100002d
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> uname -a
+Linux ex-std-node720.prod.rhcloud.com 2.6.32-573.26.1.el6.x86_64 #1 SMP Tue Apr 12 01:47:01 EDT 2016 x86_64 x86_64 x86_64 GNU/Linux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> alias ls='ls --color=auto'
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> /sbin/ifconfig
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+eth0      Link encap:Ethernet  HWaddr 12:3A:6F:EB:EF:BF  
+          inet addr:172.16.9.232  Bcast:172.16.11.255  Mask:255.255.252.0
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          Interrupt:142 
+
+Warning: cannot open /proc/net/dev (Permission denied). Limited output.
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> fdisk -l
+bash: fdisk: command not found
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> df -h
+df: `/proc/sys/fs/binfmt_misc': Permission denied
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/rootvg-rootvol
+                      7.8G  6.3G  1.2G  85% /
+tmpfs                 5.0M     0  5.0M   0% /dev/shm
+/dev/xvda1            239M   83M  144M  37% /boot
+/dev/mapper/rootvg-var
+                      8.0G  3.2G  4.9G  40% /var
+/dev/mapper/EBSStore01-user_home01
+                      175G  127G   49G  73% /var/lib/openshift
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> mount
+/dev/mapper/rootvg-rootvol on / type ext4 (rw)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw,rootcontext="system_u:object_r:tmpfs_t:s0")
+/dev/xvda1 on /boot type ext4 (rw)
+/dev/mapper/rootvg-var on /var type xfs (rw)
+/dev/mapper/EBSStore01-user_home01 on /var/lib/openshift type xfs (rw,nosuid,uquota)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cat /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+stepping	: 4
+microcode	: 1045
+cpu MHz		: 2500.072
+cache size	: 25600 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 1
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good xtopology unfair_spinlock pni pclmulqdq ssse3 cx16 pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm xsaveopt fsgsbase smep erms
+bogomips	: 5000.14
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> free
+             total       used       free     shared    buffers     cached
+Mem:      15297608   14925104     372504    1064236      37288    3342276
+-/+ buffers/cache:   11545540    3752068 
+Swap:     52428792   25272628   27156164 
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> ps aux
+USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4100     333950  0.0  0.0   9500   856 ?        S    10:42   0:00 /bin/bash /var/lib/openshift/543dd9894382ec666100002d/mysql/bin/control start
+4100     333955  0.0  0.0   9240  1264 ?        S    10:42   0:00 /bin/sh /usr/bin/mysqld_safe --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --log-error=/var/
+4100     333956  0.0  0.0 185748  2368 ?        Sl   10:42   0:00 /usr/bin/logshifter -tag mysql
+4100     334098  0.0  0.2 510860 42876 ?        Sl   10:42   0:00 /usr/libexec/mysqld --defaults-file=/var/lib/openshift/543dd9894382ec666100002d/mysql//conf/my.cnf --basedir=/usr --datadir=/
+4100     334811  0.0  0.1 428984 17264 ?        S    10:43   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     334812  0.0  0.0 261528  2392 ?        Sl   10:43   0:00 /usr/bin/logshifter -tag phpmyadmin
+4100     334833  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     334840  0.0  0.0   4072   488 ?        S    10:43   0:00 tee
+4100     334845  0.0  0.0 428984  7056 ?        S    10:43   0:00 /usr/sbin/httpd -C Include /var/lib/openshift/543dd9894382ec666100002d/phpmyadmin/conf.d/*.conf -f /var/lib/openshift/543dd98
+4100     337859  0.0  0.1 426652 17152 ?        S    10:43   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     337860  0.0  0.0 195992  2396 ?        Sl   10:43   0:00 /usr/bin/logshifter -tag php
+4100     337870  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     337872  0.0  0.0   4072   496 ?        S    10:43   0:00 tee
+4100     369596  0.0  0.0 109140  3008 ?        S    10:58   0:00 sshd: 543dd9894382ec666100002d@pts/0
+4100     369600  0.0  0.0 106760  2304 pts/0    Ss+  10:58   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     397253  0.1  0.3 457572 50204 ?        S    11:10   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     397286  0.0  0.1 432464 27836 ?        S    11:10   0:00 /usr/sbin/httpd -c Include /var/lib/openshift/543dd9894382ec666100002d/php//configuration/etc/conf.d/*.conf -f /var/lib/opens
+4100     405629  0.0  0.0 108796  2764 ?        S    11:14   0:00 sshd: 543dd9894382ec666100002d@pts/1
+4100     405744  0.3  0.0 106636  2244 pts/1    Ss   11:14   0:00 /bin/bash --init-file /usr/bin/rhcsh -i
+4100     409972  0.0  0.0 108136  1084 pts/1    R+   11:15   0:00 ps aux
+[php-qiuzheng.rhcloud.com 543dd9894382ec666100002d]\> cd ~/app-deployments/test/
+[php-qiuzheng.rhcloud.com test]\> tar zcvf src.tar.gz ./src/*
+./src/arm/
+./src/c/
+./src/http/
+./src/http/getip/
+./src/http/getip/Makefile
+./src/http/getip/connect
+./src/http/getip/connect.c
+./src/http/getip/html.txt
+./src/http/getip/result.txt
+./src/http/getip/var.h
+./src/http/http/
+./src/http/http/Makefile
+./src/http/http/bin.sh
+./src/http/http/connect
+./src/http/http/connect.c
+./src/http/http/define.h
+./src/http/http/dns.h
+./src/http/http/result-copy.txt
+./src/http/http/start_no.txt
+./src/http/http/var.h
+./src/http/http/result.txt
+./src/http/http/html.txt
+./src/http/http.tar.gz
+./src/http/www-jiayuan-com/
+./src/http/www-jiayuan-com/html.txt
+./src/http/www-jiayuan-com/connect.c
+./src/http/www-jiayuan-com/var.h
+./src/http/www-jiayuan-com/README.md
+./src/http/www-jiayuan-com/dns.h
+./src/http/www-jiayuan-com/bin.sh
+./src/http/www-jiayuan-com/start_no.txt
+./src/http/www-jiayuan-com/define.h
+./src/http/www-jiayuan-com/test.db
+./src/http/www-jiayuan-com/Makefile
+./src/http/www-jiayuan-com/connect.o
+./src/http/www-jiayuan-com/db_test
+./src/php/
+./src/php/wordpress/
+./src/php/wordpress/wordpress.tar.gz
+./src/python/
+./src/python/html/
+./src/python/html/html.py
+./src/python/html/html.txt
+./src/python/mail/
+./src/python/mail/mail_file.py
+./src/python/mail/mail_picture.py
+./src/python/mail/mail_text.py
+[php-qiuzheng.rhcloud.com test]\> exit
+exit
+Connection to php-qiuzheng.rhcloud.com closed.
+send: spawn id exp7 not open
+    while executing
+"send "\r""
+    (file "./tar.exp" line 23)
+spawn rhc ssh php
+Connecting to 543dd9894382ec666100002d@php-qiuzheng.rhcloud.com ...
+pwd
+Connection closed by 52.91.81.88
+send: spawn id exp7 not open
+    while executing
+"send "whoami\r""
+    (file "./tar.exp" line 10)

@@ -1,0 +1,5 @@
+spawn rhc scp download ./Download/ app-deployments/test.tar.gz
+spawn rhc scp download ./Download/ app-deployments/test.tar.gz
+spawn rhc scp download ./Download/ app-deployments/test.tar.gz
+spawn rhc scp download ./Download/ app-deployments/test.tar.gz
+spawn rhc scp php download ./Download/ app-deployments/test/test.tar.gz
