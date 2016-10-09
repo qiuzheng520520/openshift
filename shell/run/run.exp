@@ -1,0 +1,25 @@
+#!/usr/bin/expect
+
+set timeout 120
+
+spawn rhc ssh php
+
+expect "\\>"; send "ls\r"
+
+expect "\\>"; send "alias ls='ls --color=auto'\r"
+
+expect "\\>"; send "cd ~/app-deployments/test/\r"
+expect "\\>"; send "ls\r"
+
+expect "\\>"; send "cd ~/app-deployments/test/src/\r"
+expect "\\>"; send "ls\r"
+
+expect "\\>"; send "cd http/\r"
+expect "\\>"; send "ls\r"
+
+#interact
+expect "\\>"; send "tree\r"
+
+expect "\\>"; send "exit\r"
+expect eof
+exit
