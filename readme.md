@@ -27,3 +27,11 @@ openshift自动化交互脚本
 5.查看进程运行状态
 命令:./run/status.exp
 
+[数据库查询方法]
+1.下载sqlite3:http://www.sqlite.org/download.htmli,选择Pre-release Snapshots。
+2.编译:./configure;make;make install。
+3.打开sqlite数据库文件:sqlite3 test.db
+4.查看表:.schema
+5.查询表test_db的所有数据:select * from test_db。
+6.查看表test_db的记录条目数量:select count(*) from test_db;
+
